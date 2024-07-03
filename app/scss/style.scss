@@ -9,7 +9,7 @@
     padding: 24px 16px 49px;
 
     &__title {
-        @include fluidFont(24px, 36px, 32px, 55px, 320px, 768px, 24px);
+        @include fonts(24px, 32px);
         font-weight: 500;
         text-align: center;
         color: #000000;
@@ -23,7 +23,7 @@
         align-items: center;
 
         column-gap: 28px;
-        row-gap: calc(32px + (37 - 32) * ((100vw - 320px) / (768 - 320)));
+        row-gap: 32px;
         width: 100%;
 
         list-style: none;
@@ -31,8 +31,8 @@
 
     &__card {
         display: flex;
-        width: calc(288px + (336 - 288) * ((100vw - 320px) / (768 - 320)));
-        min-height: calc(347px + (420 - 347) * ((100vw - 320px) / (768 - 320)));
+        width: 288px;
+        min-height: 347px;
        
         border-radius: 10px;
         overflow: hidden;
@@ -102,7 +102,7 @@
     &__title {
         position: relative;
 
-        @include fluidFont(20px, 24px, 26px, 32px, 320px, 768px, 20px);
+        @include fonts(20px, 26px);
 
         text-decoration: none;
 
@@ -129,10 +129,10 @@
     }
 
     &__description {
-        margin-top: calc(10px + (9 - 10) * ((100vw - 320px) / (768 - 320)));
+        margin-top: 10px;
 
         font-family: "Open Sans", sans-serif;
-        @include fluidFont(14px, 16px, 21px, 24px, 320px, 768px, 14px);
+        @include fonts(14px, 21px);
         font-weight: 400;
     }
 
@@ -142,38 +142,37 @@
         justify-content: space-between;
         align-items: flex-start;
         row-gap: 16px;
-        min-height: 149px;
-        padding: 18px 0 21px;
+        padding: 17px 0 20px;
 
         border-top: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     &__text {
         font-family: "Open Sans", sans-serif;
-        @include fluidFont(14px, 16px, 21px, 24px, 320px, 768px, 14px);
+        @include fonts(14px, 21px);
     }
 
     &__text--big {
-        @include fluidFont(17px, 19px, 24px, 24px, 320px, 768px, 17px);
+        @include fonts(17px, 24px);
     }
 
     &__price {
-        @include fluidFont(20px, 24px, 32px, 32px, 320px, 768px, 20px);
+        @include fonts(20px, 32px);
         color: $color_primary_2;
     }
 
     &__currency {
-        @include fluidFont(20px, 23px, 32px, 32px, 320px, 768px, 20px);
+        @include fonts(20px, 32px);
         font-weight: 400;
         color: #999999;
     }
 
     &__button {
         width: 100%;
-        height: calc(42px + (48 - 42) * ((100vw - 320px) / (768 - 320)));
+        padding: 8px 24px 10px 25px;
 
         font-family: "Open Sans", sans-serif;
-        @include fluidFont(14px, 16px, 24px, 24px, 320px, 768px, 14px);
+        @include fonts(14px, 24px);
 
         background-color: $color_primary_1;
         border-radius: 5px;
@@ -182,6 +181,7 @@
 
         &:hover {
             background-color: $color_primary_3;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         }
 
         &:active {
@@ -230,15 +230,13 @@
 
     &__text {
         font-family: "Open Sans", sans-serif;
-        font-size: 14px;
-        line-height: 21px;
+        @include fonts(14px, 21px);
         font-weight: 400;
     }
 
     &__link {
         font-family: "Open Sans", sans-serif;
-        font-size: 14px;
-        line-height: 21px;
+        @include fonts(14px, 21px);
         font-weight: 600;
         color: $color_primary_2;
         text-decoration: none;
@@ -261,17 +259,22 @@
         row-gap: 26px;
         padding: 27px 34px 39px;
 
+        &__title {
+            @include fonts(36px, 55px);
+        }
+
         &__list {
             flex-direction: row;
             justify-content: center;
             align-items: stretch;
             flex-wrap: wrap;
-            column-gap: calc(28px + (32 - 28) * ((100vw - 768px) / (1024 - 768)));
+            column-gap: 28px;
+            max-width: 700px;
         }
 
         &__card {
-            width: calc(336px + (372 - 336) * ((100vw - 768px) / (1024 - 768)));
-            min-height: calc(420px + (372 - 420) * ((100vw - 768px) / (1024 - 768)));
+            width: 336px;
+            min-height: 420px;
         }
     }
 
@@ -285,38 +288,42 @@
             margin: 74px 0 20px;
         }
 
+        &__title {
+            @include fonts(24px, 32px);
+        }
+
         &__description {
             margin-top: 9px;
+
+            @include fonts(16px, 24px);
         }
 
         &__booking {
-            padding: 17px 0 24px;
+            padding: 17px 0 23px;
+        }
+
+        &__text {
+            @include fonts(16px, 24px);
+        }
+
+        &__text--big {
+            @include fonts(19px, 24px);
         }
 
         &__price {
             margin-right: 6px;
+
+            @include fonts(24px, 32px);
+        }
+
+        &__currency {
+            @include fonts(23px, 32px); 
         }
 
         &__button {
-            height: 48px;
-        }
-    }
-}
+            padding: 11px 24px 13px 25px;
 
-@media screen and (min-width: 1024px) {
-    .catalog-rooms {
-        padding: 27px 50px 39px;
-
-        &__list {
-            column-gap: 32px;
-            max-width: 1180px;
-        }
-
-        &__card {
-            width: 372px;
-            min-height: 372px;
-
-            display: flex;
+            @include fonts(16px, 24px);
         }
     }
 }
@@ -325,6 +332,7 @@
     .catalog-rooms {
         justify-content: center;
         row-gap: 33px;
+        padding: 27px 50px 39px;
 
         &__top {
             margin-bottom: -8px;
@@ -335,7 +343,14 @@
         }
 
         &__list {
+            column-gap: 32px;
             row-gap: 37px;
+            max-width: 1180px;
+        }
+
+        &__card {
+            width: 372px;
+            min-height: 372px;
         }
     }
 
@@ -344,9 +359,7 @@
         &__booking {
             flex-direction: row;
             align-items: center;
-            min-height: 0;
-            height: 96px;
-            padding: 23px 0 24px;
+            padding: 19px 0 20px;
         }
 
         &__price {
@@ -354,7 +367,8 @@
         }
 
         &__button {
-            width: 180px;
+            max-width: 180px;
+            width: 100%;
         }
     }
 }

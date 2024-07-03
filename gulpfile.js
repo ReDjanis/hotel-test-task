@@ -35,7 +35,14 @@ function fonts() {
 }
 
 function styles() {
-    return src('app/scss/*.scss')
+    return src(
+        [
+            'app/scss/vars.scss',
+            'app/scss/reset.scss',
+            'app/scss/fonts.scss',
+            'app/scss/global.scss',
+            'app/scss/style.scss'
+        ])
         .pipe(autoprefixer({ overrideBrowserslist: ['last 10 version'] }))
         .pipe(concat('style.min.css'))
         .pipe(scss({ outputStyle: 'compressed' }))
@@ -101,12 +108,9 @@ function building() {
         'app/css/style.min.css',
         'app/images/*.*',
         '!app/images/*.svg',
-        'app/images/sprite.svg',
         'app/fonts/*.*',
         'app/js/main.min.js',
         'app/*.html',
-        'app/*.php',
-        'app/phpmailer/*',
       
     ], { base: 'app' })
         .pipe(dest('dist'))

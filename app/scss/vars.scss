@@ -1,0 +1,13 @@
+$color_primary_1: #F91155;
+$color_primary_2: #FF4B77;
+$color_primary_3: #D8003F;
+$color_secondary: #3C3E43;
+$color_accent: #FF7647;
+
+@mixin fonts($fz, $lh) {
+    font-size: $fz;
+    line-height: $lh;
+}
+
+
+
